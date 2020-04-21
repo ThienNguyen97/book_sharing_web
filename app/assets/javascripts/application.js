@@ -20,3 +20,4 @@
 //= require rate
 //= require font_awesome5
 //= require_tree .
+//= require rails-ujs
