@@ -38,9 +38,9 @@ group :development, :test do
   gem "mysql2"
 end
 
-group :production do
-  gem 'thin'
-end
+# group :production do
+#   gem 'thin'
+# end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
