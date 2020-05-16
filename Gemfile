@@ -8,6 +8,7 @@ gem "bootstrap-sass"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+gem 'rails_admin'
 gem "devise"
 gem "faker"
 gem "font-awesome-rails"

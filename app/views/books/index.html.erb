@@ -18,17 +18,7 @@
                 <h1 id="bookTitle" class="bookTitle">
                   <%= link_to book.name, book_path(book) %>
                 </h1>
-                <div id="bookAuthors" class="stacked">
-                  <span class="by smallText">
-                    <% if book.authors.any? %>
-                      <small><%= t "by" %></small>
-                      <% book.authors.each do |author| %>
-                        <span><%= author.name %></span>
-                        <% unless author == book.authors.last %>,<% end %>
-                      <% end %>
-                    <% end %>
-                  </span>
-                </div>
+
                 <div id="details" class="uitext darkGreyText">
                   <div class="">
                     <%= t "published" %><%= book.publish_date.strftime("%d %b %Y") %>

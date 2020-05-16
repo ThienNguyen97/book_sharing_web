@@ -37,14 +37,7 @@
             <h1 id="bookTitle" class="bookTitle">
               <%= link_to @book.name, book_path(@book) %>
             </h1>
-            <div id="bookAuthors" class="stacked">
-              <span class="by smallText">
-                <% if @book.authors.any? %>
-                  <small><%= t "by" %></small>
-                  <%= @book.authors.map(&:name).join(", ") %>
-                <% end %>
-              </span>
-            </div>
+
 
             <!-- average rate -->
             <!-- TODO -->
@@ -80,16 +73,6 @@
         <div class=" clearFloats bigBox">
           <div class="h2Container gradientHeaderContainer">
             <h2 class="brownBackground"><%= t "genres" %></h2><hr>
-          </div>
-          <div class="bigBoxBody">
-            <div class="bigBoxContent containerWithHeaderContent">
-              <% @book.genres.distinct.each do |cate| %>
-                <div class="elementList ">
-                  <%= link_to cate.name, "#",
-                    class:"bookPageGenreLink" %>
-                </div>
-              <% end %>
-            </div>
           </div>
         </div>
       </div>

@@ -34,14 +34,6 @@
             <h1 id="bookTitle" class="bookTitle">
               <%= link_to book.name, book_path(book) %>
             </h1>
-            <div id="imagecol" class="stacked">
-              <span class="by smallText">
-                <% if book.authors.any? %>
-                  <small><%= t "by" %></small>
-                  <%= book.authors.map(&:name).join(", ") %>
-                <% end %>
-              </span>
-            </div>
 
             <div class="review row post-content">
               <div class="reviewText stacked col-sm-12">

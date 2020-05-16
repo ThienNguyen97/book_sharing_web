@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root "static_pages#home"
   concern :paginatable do
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :books, only: %i(index show) do
     resources :rates, only: [:create]
   end
-  resources :genres, only: :show
+  # resources :genres, only: :show
   resources :posts do
     resources :comments
     resources :likes, only: %i(create destroy)
