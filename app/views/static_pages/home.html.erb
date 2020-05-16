@@ -11,18 +11,13 @@
             <h1>Your following's reviews</h1><hr>
             <% @feed_items.each do |post| %>
               <div class="row">
-                <div class="col-sm-4">
-                  <%= link_to book_path(post.book) do %>
-                    <%= image_tag post.book.picture.url, class: "home-book-image" if post.book.picture? %>
-                  <% end %>
-                </div>
                 <div class="col-sm-8">
                   <h2>
                     <%= link_to post_path(post) do %>
                       <b><%= post.title %></b>
                     <% end %>
                   </h2>
-                  <span><b><%= post.book.name %></b></span><br>
+                  <span><b><%= post.book_name %></b></span><br>
 
                   <span class="post-date">
                     Reviewed by
@@ -111,18 +106,14 @@
           <h1>Latest posts</h1><hr>
           <% @posts.each do |post| %>
             <div class="row">
-              <div class="col-sm-4">
-                <%= link_to book_path(post.book) do %>
-                    <%= image_tag post.book.picture.url, class: "home-book-image" if post.book.picture? %>
-                  <% end %>
-              </div>
+              <!--  -->
               <div class="col-sm-8">
                 <h2>
                   <%= link_to post_path(post) do %>
                     <b><%= post.title %></b>
                   <% end %>
                 </h2>
-                <span><b><%= post.book.name %></b></span><br>
+                <span><b><%= post.book_name %></b></span><br>
 
                 <span class="post-date">
                   Reviewed by <%= link_to post.user.name, user_path(post.user),

@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :user_id, :title, :content, :book_id
+    params.require(:post).permit :user_id, :title, :content, :book_name
   end
 
   def load_post

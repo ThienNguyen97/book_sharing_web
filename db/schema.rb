@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_08_05_070239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "book_id"
+    t.string "book_name"
     t.string "title"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
   end

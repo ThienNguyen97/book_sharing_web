@@ -2,7 +2,7 @@ class Book < ApplicationRecord
   mount_uploader :picture, ImagesUploader
   scope :order_asc, ->{order name: :asc}
   has_many :rates
-  has_many :posts, dependent: :destroy
+  #has_many :posts, dependent: :destroy
 
   validates :name, presence: true
 
