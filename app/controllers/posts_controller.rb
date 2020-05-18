@@ -18,6 +18,9 @@ class PostsController < ApplicationController
     @post = Post.new post_params
 
     if @post.save
+      params[:post_images]['image'].each do |a|
+        @image = @post.post_images.create!(:link => a)
+      end
       flash[:success] = t "post_success"
       redirect_to @post
     else
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
+    if @post.update_attributes(post_params)
       flash[:success] = t "update_success"
       redirect_to @post
     else
@@ -43,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :user_id, :title, :content, :book_name
+    params.require(:post).permit :user_id, :title, :content, :book_name, post_images_attributes: [:id, :post_id, :image].freeze
   end
 
   def load_post

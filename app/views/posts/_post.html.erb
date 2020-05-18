@@ -1,16 +1,28 @@
-<li id="post-<%= post.id %>">
+<div class="row",id="post-<%= post.id %>">
+  <div class="col-sm-3">
   <%= link_to gravatar_for(post.user, size: Settings.post_size),
      post.user %>
-  <span class="user"><%= link_to post.user.name, post.user %></span>
-  <%= t "reviewed" %>
-  <%= link_to post.book.name, post.book %>
-  <span class="minicontent">
-    <%= link_to post.title, post %>
-    <%= post.content %>
-    <%= image_tag post.book.picture.url, id: "img" if post.book.picture? %>
-  </span>
-  <span class="timestamp">
-    <%= t "posted" %> <%=  time_ago_in_words(post.created_at) %>
-    <%= t "ago" %>.
-  </span>
-</li>
+     <div class="review-block-name">
+      <a class="user"><%= link_to post.user.name, post.user %></a>
+    </div>
+    <div class="review-block-date">
+      <%= t "posted" %> <%=  time_ago_in_words(post.created_at) %> <%= t "ago" %>.
+    </div>
+  </div>
+  <div class="col-sm-9">
+    <div class="review-block-title">
+      <%= link_to post.title, post %>
+    </div>
+    <span class="minicontent">
+      <p><%= link_to post.book_name, post %></p>
+      <div class="review-block-description">
+        <%= post.content %>
+       </div>
+        <div class="review-block-picture">
+          <% post.post_images.each do |img| %>
+                        <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
+                      <% end %>
+        </div>
+      </span>
+  </div>
+</div>

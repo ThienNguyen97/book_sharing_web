@@ -23,6 +23,9 @@
             <div id="imagecol" class="col-sm-12">
 <!-- add picture -->
               <div class="bookCoverContainer">
+                <% post.post_images.each do |img| %>
+                  <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
+                <% end %>
 
               </div>
             </div>

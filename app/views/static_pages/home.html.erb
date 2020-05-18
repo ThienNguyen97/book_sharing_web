@@ -20,7 +20,7 @@
                   <span><b><%= post.book_name %></b></span><br>
 
                   <span class="post-date">
-                    Reviewed by
+                    Posted by
                     <%= link_to post.user.name, user_path(post.user),
                       data: {turbolinks: false} %>
                   </span>&nbsp;&nbsp;|
@@ -57,9 +57,9 @@
             <% @posts.each do |post| %>
               <div class="row">
                 <div class="col-sm-4">
-                  <%= link_to book_path(post.book) do %>
-                    <%= image_tag post.book.picture.url, class: "home-book-image" if post.book.picture? %>
-                  <% end %>
+                  <% post.post_images.each do |img| %>
+                      <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
+                    <% end %>
                 </div>
                 <div class="col-sm-8">
                   <h2>
@@ -67,7 +67,7 @@
                       <b><%= post.title %></b>
                     <% end %>
                   </h2>
-                  <span><b><%= post.book.name %></b></span><br>
+                  <span><b><%= post.book_name %></b></span><br>
 
                   <span class="post-date">
                     Reviewed by <%= link_to post.user.name, user_path(post.user),
@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-sm-8">
                   <div class="status">
-                    <p>Reviews: <b><%= user.posts.count %></b></p>
+                    <p>Posted: <b><%= user.posts.count %></b></p>
                     <p>Likes: <strong><%= user.count_getted_like %></strong></p>
                   </div>
                 </div>
