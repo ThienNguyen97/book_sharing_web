@@ -6,6 +6,7 @@ class LikesController < ApplicationController
     likes = @post.likes
     like = likes.create user_id: current_user.id
     render json: {likes_count: likes.size, like_id: like.id}
+    Notifications::LikeReplyService.new(like).perform
   end
 
   def destroy

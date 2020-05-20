@@ -9,3 +9,9 @@ post_size: 50
 content_value: 1140
 maximum_length_pass: 128
 reset_password_within: 6
+user:
+  gravatar_size: 80
+  gravatar_big_size: 200
+  gravatar_size_small: 50
+  gravatar_post_size: 42
+  gravatar_size_mini: 25

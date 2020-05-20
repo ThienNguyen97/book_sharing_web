@@ -18,6 +18,7 @@
 //= require post
 //= require comment
 //= require rate
+//= require cable
 //= require font_awesome5
 //= require_tree .
 //= require rails-ujs

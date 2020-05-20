@@ -12,6 +12,7 @@
  *
  *= require_self
  *= require font_awesome5
+ *= require notification
  */
  @import 'custom';
  @import 'main';

@@ -1,9 +1,11 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :message_user
+    identified_by :message_user, :current_user
 
     def connect
       self.message_user = find_verified_user
+
+      self.current_user = find_verified_user
     end
 
     private

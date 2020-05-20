@@ -29,6 +29,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.minimum_length_pass},
     allow_nil: true
 
+  acts_as_target
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

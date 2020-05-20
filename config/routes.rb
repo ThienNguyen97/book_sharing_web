@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   get "/auth/:provider/callback", :to => "sessions#create"
   get "/auth/failure", :to => "sessions#failure"
+  notify_to :users
   resources :users do
     member do
       get "followers/new", to: "followers#new"

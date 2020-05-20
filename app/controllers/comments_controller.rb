@@ -4,10 +4,12 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: %i(update destroy)
 
   def create
+    @post_id = comment_params[:post_id]
     comments = @post.comments
     comment = @post.comments.build comment_params
 
     if comment.save
+      Notifications::CommentReplyService.new(comment).perform
       flash[:success] = t "success"
     else
       flash[:danger] = t "fail"
