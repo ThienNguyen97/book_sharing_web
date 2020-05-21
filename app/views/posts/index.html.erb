@@ -11,6 +11,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post %></td>
+        <td><%= link_to post.book_name, post %></td>
         <td><button type="button" class="btn btn-default" style="margin-left: 200px"><%= link_to "Show", post %></button></td>
         <td><button type="button" class="btn btn-default"><%= link_to t("edit"), edit_post_path(post) %></button></td>
         <td><button type="button" class="btn btn-default"><%= link_to t("destroy"), post, method: :delete, data: { confirm: "Are you sure?" } %></button></td>

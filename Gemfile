@@ -8,6 +8,8 @@ gem "bootstrap-sass"
 gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
+gem "rolify"
+gem "cancancan"
 gem 'rails_admin'
 gem "devise"
 gem "faker"
@@ -40,9 +42,10 @@ group :development, :test do
   gem "mysql2"
 end
 
-# group :production do
-#   gem 'thin'
-# end
+group :production do
+  gem "pg",             "~> 0.18"
+  gem "rails_12factor", "0.0.2"
+end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"

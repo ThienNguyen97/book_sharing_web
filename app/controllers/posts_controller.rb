@@ -5,7 +5,12 @@ class PostsController < ApplicationController
   before_action :load_support
 
   def index
-    @posts = Post.all
+    @posts = Post.order(:book_name).where("book_name like ?", "%#{params[:term]}%")
+    # render json: @posts.map{|t| {label: t.book_name, value: t.id}}
+  end
+
+  def search
+    @posts = Post.search(params[:q]) if params[:q]
   end
 
   def show; end

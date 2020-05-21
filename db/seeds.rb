@@ -1,15 +1,10 @@
-20.times do |n|
-  Book.create!(
-    name: Faker::Book.title,
-    page_number: Faker::Number.number(digits:3),
-    isbn: Faker::Number.number(digits:9),
-    publisher: Faker::Book.publisher,
-    publish_date: Faker::Date.between(from:2.years.ago,to: Date.today),
-    descript: Faker::Lorem.paragraph(sentence_count:1),
-    picture: File.open(Rails.root + "public/uploads/image/book_default.jpg"),
-  )
-end
+Role.create(name: 'admin')
 
+user1 = User.create(email: 'admin@test.com',
+          password: '123456',
+          password_confirmation: '123456',
+          name: 'Admin')
+user1.add_role(:admin)
 
 User.create!([
   {email: "vutuananhsama@gmail.com", name: "Anh",
@@ -40,23 +35,23 @@ end
 Post.create!([
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
-  user_id: 1,
+  user_id: 2,
   book_name: "Mina no nihongo"},
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
-  user_id: 1,
+  user_id: 2,
   book_name: "Mina no nihongo 1 "},
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
-  user_id: 1,
+  user_id: 2,
   book_name: "Mina no nihongo 2 "},
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
-  user_id: 1,
+  user_id: 3,
   book_name: "Mina no nihongo 1"},
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
-  user_id: 1,
+  user_id: 4,
   book_name: "Mina no nihongo"},
   {title: Faker::Lorem.sentence,
   content: Faker::Lorem.paragraph(sentence_count:20),
