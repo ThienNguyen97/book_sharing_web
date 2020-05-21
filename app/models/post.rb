@@ -21,4 +21,12 @@ class Post < ApplicationRecord
     likes = post.likes
     likes.size
   end
+
+  def self.search pattern
+    if pattern.blank?
+      all
+    else
+      where("book_name LIKE ?", "%#{pattern}%")
+    end
+  end
 end

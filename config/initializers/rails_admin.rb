@@ -3,13 +3,13 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
 
   ## == CancanCan ==
-  # config.authorize_with :cancancan
+  config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -38,4 +38,80 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.default_items_per_page = Settings.RAILS_ADMIN_PAGINATION
+
+  config.model 'User' do
+    list do
+      field :id do
+        sort_reverse false
+      end
+      field :id
+      field :name
+      field :email
+      field :created_at
+    end
+
+    edit do
+      configure :schedule do
+        hide
+      end
+    end
+
+    show do
+      configure :schedule do
+        hide
+      end
+    end
+  end
+
+  config.model 'Post' do
+    list do
+      field :id do
+        sort_reverse false
+      end
+      field :title
+      field :book_name
+      field :content
+      # field :user_name
+      field :created_at
+    end
+
+    edit do
+      configure :service do
+        hide
+      end
+    end
+
+    show do
+      configure :service do
+        hide
+      end
+    end
+  end
+
+  config.model 'Comment' do
+    list do
+      field :id do
+        sort_reverse false
+      end
+      #field :user_name
+      field :post_id
+      field :content
+      field :created_at
+    end
+
+    edit do
+      configure :service do
+        hide
+      end
+    end
+
+    show do
+      configure :service do
+        hide
+      end
+    end
+  end
+
 end

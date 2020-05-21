@@ -1,3 +1,11 @@
+<% if current_user.has_role? :admin %>
+  <li>
+       <%= link_to rails_admin_path,class: "dropbtn" do  %>
+      <i class="far fa-edit" aria-hidden="true"></i>
+      <%= t "Dashboard" %>
+      <% end %>
+  </li>
+<% else %>
 <li>
   <%= link_to new_post_path, class: "dropbtn" do %>
     <i class="far fa-edit" aria-hidden="true"></i>
@@ -10,6 +18,7 @@
     <%= "Messenger" %>
   <% end %>
 </li>
+<% end %>
 <li id="notifications_in_header">
   <%= render_notifications_of current_user, index_content: :with_attributes %>
 </li>
