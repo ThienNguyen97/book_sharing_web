@@ -14,7 +14,13 @@
 
                   <!-- Review user rate -->
                   <!-- TODO -->
-
+                  <div class="col-sm-3">
+                    <%= link_to gravatar_for(post.user, size: Settings.post_size),
+                       post.user %>
+                       <div class="review-block-name">
+                        <a class="user"><%= link_to post.user.name, post.user %></a>
+                      </div>
+                    </div>
                   <b><p><%= post.title %></p></b>
                   <b><p><%= post.book_name %></p></b>
                 </div>
