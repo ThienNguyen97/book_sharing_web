@@ -15,9 +15,9 @@ Rails.application.routes.draw do
       get "following/new", to: "following#new"
     end
   end
-  resources :books, only: %i(index show) do
-    resources :rates, only: [:create]
-  end
+  # resources :books, only: %i(index show) do
+  #   resources :rates, only: [:create]
+  # end
   # resources :genres, only: :show
   resources :posts do
     resources :comments
