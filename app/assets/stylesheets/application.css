@@ -13,6 +13,6 @@
  *= require_self
  *= require font_awesome5
  *= require notification
+ *= require custom
+ *= require main
  */
- @import 'custom';
- @import 'main';
