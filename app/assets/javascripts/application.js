@@ -22,3 +22,4 @@
 //= require font_awesome5
 //= require_tree .
 //= require rails-ujs
+//= require notification

@@ -42,9 +42,9 @@
   <%#= link_to "Move", move_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes)) %>
   <%# if notification.unopened? %>
     <%#= link_to "Open and move (GET)", move_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes).merge(open: true)) %>
-    <%#= link_to "Open and move (PUT)", open_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes).merge(move: true)), method: :put %>
-    <%#= link_to "Open", open_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes).merge(index_options: @index_options)), method: :put %>
-    <%#= link_to "Open (Ajax)", open_notification_path_for(notification, parameters.slice(with_group_members:, :routing_scope, :devise_default_routes).merge(reload: false)), method: :put, remote: true %>
+    <%#= link_to "Open and move (PUT)", omove_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes).merge(move: true)), method: :put %>
+    <%#= link_to "Open", omove_notification_path_for(notification, parameters.slice(:routing_scope, :devise_default_routes).merge(index_options: @index_options)), method: :put %>
+    <%#= link_to "Open (Ajax)", omove_notification_path_for(notification, parameters.slice(with_group_members:, :routing_scope, :devise_default_routes).merge(reload: false)), method: :put, remote: true %>
   <%# end %>
   <%#= link_to "Destroy", notification_path_for(notification, index_options: parameters.slice(:routing_scope, :devise_default_routes).merge(index_options: @index_options)), method: :delete %>
   <%#= link_to "Destroy (Ajax)", notification_path_for(notification, parameters.slice(with_group_members:, :routing_scope, :devise_default_routes).merge(reload: false)), method: :delete, remote: true %>
