@@ -16,3 +16,5 @@
  *= require custom
  *= require main
  */
+/* @import 'custom';*/
+/* @import 'main';*/

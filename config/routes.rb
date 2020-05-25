@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users,
+    controllers:{omniauth_callbacks: "users/omniauth_callbacks"}
   root "static_pages#home"
   concern :paginatable do
         get "(page/:page)", action: :index, on: :collection, as: ""
   end
-  get "/auth/:provider/callback", :to => "sessions#create"
-  get "/auth/failure", :to => "sessions#failure"
+  # get "/auth/:provider/callback", :to => "sessions#create"
+  # get "/auth/failure", :to => "sessions#failure"
   get "/search", :to => "posts#search"
   notify_to :users
   resources :users do

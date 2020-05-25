@@ -6,18 +6,18 @@
       <% end %>
   </li>
 <% else %>
-<li>
-  <%= link_to new_post_path, class: "dropbtn" do %>
-    <i class="far fa-edit" aria-hidden="true"></i>
-    <%= t "Write Post" %>
-  <% end %>
-</li>
-<li>
-  <%= link_to messages_path, class: "dropbtn" do %>
-    <i class="fab fa-facebook-messenger" style="font-size:16px"></i>
-    <%= "Messenger" %>
-  <% end %>
-</li>
+  <li>
+    <%= link_to new_post_path, class: "dropbtn" do %>
+      <i class="far fa-edit" aria-hidden="true"></i>
+      <%= t "Write Post" %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to messages_path, class: "dropbtn" do %>
+      <i class="fab fa-facebook-messenger" style="font-size:16px"></i>
+      <%= "Messenger" %>
+    <% end %>
+  </li>
 <% end %>
 <li id="notifications_in_header">
   <%= render_notifications_of current_user, index_content: :with_attributes %>
@@ -38,11 +38,6 @@
       <% end %>
     </li>
     <li role="separator" class="divider"></li>
-    <li>
-      <%= link_to "#", class:"blog-sub-nav-item-link" do %>
-        <%= t "user.posts" %>
-      <% end %>
-    </li>
     <li>
       <%= link_to "#", method: :get do %>
         <i class="fa fa-cog" aria-hidden="true"></i> <%= t "user.settings" %>
