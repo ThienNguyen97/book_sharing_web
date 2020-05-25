@@ -14,6 +14,9 @@ Devise.setup do |config|
 
   config.reconfirmable = true
 
+  config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], { scope: "https://www.googleapis.com/auth/userinfo.email" }
+ config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], { scope: "email" }
+
   config.expire_all_remember_me_on_sign_out = true
 
   config.password_length = Settings.minimum_length_pass..Settings.maximum_length_pass

@@ -26,6 +26,8 @@ gem "kramdown-parser-gfm"
 gem "mini_magick"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "omniauth-google-oauth2"
+gem 'figaro'
 gem "puma", "~> 3.11"
 
 gem "rails-i18n"

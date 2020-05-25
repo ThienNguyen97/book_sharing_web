@@ -1,4 +1,7 @@
 en:
+  home:
+    title: "Hedspi Web"
+    trangchu: "Home"
   time_ago: "%{time} ago"
   datetime:
     distance_in_words:
@@ -47,7 +50,7 @@ en:
       month: Month
       year: Year
   hello: "Hello world"
-  ruby_book: "RubyNaitei2019BookSharing"
+  ruby_book: "Hedspi Web"
   failure_fb: "Sorry, You can't access to our app!"
   sign_fb: "Sign in with facebook"
   sign_up: "Sign up"
@@ -89,12 +92,12 @@ en:
   create_my_account: "Create my account"
   activate_account: "Activate account"
   welcome: "welcome"
-  rails: "Rails app"
+  rails: "Hedspi Web"
   rate_book: "Rate this book"
   log_in: "Log in"
   sign_up_now: "Sign up now"
   invalid_combi: "Invalid combine username and password"
-  book_share: "Book Share"
+  book_share: "Hedspi Web"
   book_not_found: "Book not found!"
   published: "Published "
   by: "by "
@@ -121,7 +124,7 @@ en:
   submit: "Submit"
   login: "Please log in"
   write_post: "Write post"
-  form_title: "Review Book"
+  form_title: "Your's post"
   book_name: "Book name"
   choose_book: "Select a book"
   posts: "Posts"
@@ -142,9 +145,7 @@ en:
   followers: "Followers"
   user_not_found: "user not found"
   write_post: "Write post"
-  form_title: "Review Book"
   book_name: "Book name"
-  choose_book: "Select a book"
   posts: "Posts"
   new_post: "New post"
   post_success: "Post was successfully created."

@@ -1,0 +1,13 @@
+development:
+  FACEBOOK_APP_ID: '2377114912558662'
+  FACEBOOK_APP_SECRET: 'a0df3847cb13907bccc767f3d9653766'
+
+  GOOGLE_OAUTH2_APP_ID: "745802496191-aren17umil40ttou18qt4ojkkvu9cl7v.apps.googleusercontent.com"
+  GOOGLE_OAUTH2_APP_SECRET: "GcxDkTxa7hnaxdy2-AYN7IZj"
+production:
+  FACEBOOK_APP_ID: '2377114912558662'
+  FACEBOOK_APP_SECRET: 'a0df3847cb13907bccc767f3d9653766'
+
+  GOOGLE_OAUTH2_APP_ID: "745802496191-aren17umil40ttou18qt4ojkkvu9cl7v.apps.googleusercontent.com"
+  GOOGLE_OAUTH2_APP_SECRET: "GcxDkTxa7hnaxdy2-AYN7IZj"
+
