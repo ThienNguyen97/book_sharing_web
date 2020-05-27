@@ -39,11 +39,6 @@
     </li>
     <li role="separator" class="divider"></li>
     <li>
-      <%= link_to "#", method: :get do %>
-        <i class="fa fa-cog" aria-hidden="true"></i> <%= t "user.settings" %>
-      <% end %>
-    </li>
-    <li>
       <%= link_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-sign-out-alt" aria-hidden="true"></i> <%= t "user.sign_out" %>
       <% end %>
