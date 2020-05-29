@@ -6,6 +6,8 @@
           <%= image_tag(img.link.url)  %>
           <% break %>
         <% end %>
+      <% else %>
+        <%= image_tag("ITnihongo.jpg") %>
       <% end %>
     </a>
 
@@ -13,7 +15,7 @@
 
     <div class="info">
         <div class="icon fs--18 text-lightest bg-primary">
-           <li class="fa "> <%= link_to gravatar_for(post.user),post.user %></li>
+           <li> <%= link_to gravatar_for(post.user) %></li>
         </div>
 
         <div class="title">
@@ -31,7 +33,7 @@
 
         <div class="desc text-darker">
             <p>
-              <%= truncate_html(post.content, length: 150, omission: ' ...') %>
+              <%= truncate_html(post.content, length: 80, omission: ' ...') %>
             </p>
         </div>
     </div>

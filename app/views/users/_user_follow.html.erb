@@ -1,0 +1,27 @@
+<div class="member--items">
+  <div class="row gutter--15 AdjustRow">
+      <% @users.each do |user| %>
+        <div class="col-md-3 col-xs-6 col-xxs-12">
+        <!-- Member Item Start -->
+        <div class="member--item">
+            <div class="img img-circle">
+                <a class="btn-link">
+                    <%= gravatar_for user %>
+                </a>
+            </div>
+
+            <div class="name">
+                <h3 class="h6 fs--12">
+                    <a class="btn-link"><%= user.name %></a>
+                </h3>
+            </div>
+
+            <div class="activity">
+                <p>Active 2 monts ago</p>
+            </div>
+        </div>
+        <!-- Member Item End -->
+        </div>
+      <% end %>
+  </div>
+</div>

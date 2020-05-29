@@ -8,12 +8,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = @user.posts.page(params[:page]).per Settings.paginate_post
+    @posts = @user.posts.order_desc.page(params[:page]).per Settings.paginate_post
   end
 
   def new
     @user = User.new
   end
+
+  def show_profile; end
 
   def create
     @user = User.new user_params
@@ -37,11 +39,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def show_following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.page(params[:page]).per Settings.paginate_user
+    render 'show_following'
+  end
+  def show_followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.page(params[:page]).per Settings.paginate_user
+    render 'show_followers'
+  end
+
   private
 
   def user_params
     params.require(:user).permit :name, :email, :password,
-      :password_confirmation
+      :password_confirmation, :avatar
   end
 
   def correct_user

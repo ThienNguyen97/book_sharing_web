@@ -7,6 +7,9 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :commented_users, through: :comments, source: :user
 
+  has_many :post_hash_tags
+  has_many :hash_tags, through: :post_hash_tags
+
   accepts_nested_attributes_for :post_images, allow_destroy: true,
     reject_if: proc{|attributes| attributes["image"].blank?}
 
@@ -15,6 +18,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
 
   validates :content, :title, :book_name, presence: true, allow_blank: false
+  after_commit :create_hash_tags, on: :create
 
   def count_like
     post = Post.find_by id: id
@@ -25,8 +29,21 @@ class Post < ApplicationRecord
   def self.search pattern
     if pattern.blank?
       all
+    elsif (pattern.start_with?('#'))
+      q  = pattern.gsub('#', '')
+      @posts = Post.joins(:hash_tags).where(hash_tags: {name: q})
     else
       where("book_name LIKE ?", "%#{pattern}%")
     end
+  end
+
+  def create_hash_tags
+    extract_name_hash_tags.each do |name|
+      hash_tags.create(name: name)
+    end
+  end
+
+  def extract_name_hash_tags
+    content.to_s.scan(/#\w+/).map{|name| name.gsub("#", "")}
   end
 end

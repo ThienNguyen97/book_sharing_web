@@ -1,24 +1,75 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="stats">
-      <%= render "shared/stats" %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <%= render "follow_form" if user_signed_in? %>
-    <% if @user.posts.any? %>
-      <h3><%= t "posts" %> (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-      <%= paginate @posts, theme: "twitter-bootstrap-3" %>
-    <% end %>
+<!-- Cover Header Start -->
+  <div class="cover--header pt--80 text-center" data-bg-img="img/cover-header-img/bg-02.jpg" data-overlay="0.6" data-overlay-color="white">
+      <div class="container">
+          <div class="cover--avatar" data-overlay="0.3" data-overlay-color="primary">
+              <%= gravatar_for @user %>
+          </div>
+          <div class="cover--user-name">
+            <h2 class="h3 fw--600"><%= @user.name %></h2>
+          </div>
+
+          <div class="cover--user-desc fw--400 fs--18 fstyle--i text-darkest">
+            <p>Contract:<%= @user.email %></p>
+            <p>Have a nice day!</p>
+          </div>
+          <div class="cover--user-name">
+            <%= render "users/follow_form" if user_signed_in? %>
+          </div>
+      </div>
   </div>
-</div>
+  <!-- Cover Header End -->
+
+  <!-- Active -->
+<section class="page--wrapper pt--80 pb--20">
+  <div class="container">
+    <div class="row">
+      <!-- Main Content Start -->
+      <div class="main--content col-md-10 pb--60" data-trigger="stickyScroll">
+        <div class="main--content-inner drop--shadow">
+          <!-- Content Nav Start -->
+          <div class="content--nav pb--30">
+              <ul class="nav ff--primary fs--14 fw--500 bg-lighter">
+                <li class="active">
+                  <a>
+                    <%= link_to t("home.trangchu"), user_path %>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                  <%= link_to t("profile"), profile_path(@user) %>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                  <%= link_to t("following"), following_path %>
+                  <%= @user.following.count %>
+                  </a>
+                </li>
+                <li>
+                  <a>
+                  <%= link_to t("follower"), followers_path %>
+                  <%= @user.followers.count %>
+                  </a>
+                </li>
+              </ul>
+          </div>
+          <!-- Content Nav End -->
+
+          <!-- Activity List Start -->
+          <div class="activity--list">
+              <!-- Activity Items Start -->
+              <ul class="activity--items nav">
+                <% if @user.posts.any? %>
+                  <%= render @posts %>
+                <% end %>
+                <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+              </ul>
+          </div>
+        </div>
+
+      </div>
+      <!-- Main Content End -->
+    </div>
+  </div>
+</section>

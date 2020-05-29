@@ -1,28 +1,47 @@
-<div class="row",id="post-<%= post.id %>">
-  <div class="col-sm-3">
-  <%= link_to gravatar_for(post.user, size: Settings.post_size),
-     post.user %>
-     <div class="review-block-name">
-      <a class="user"><%= link_to post.user.name, post.user %></a>
-    </div>
-    <div class="review-block-date">
-      <%= t "posted" %> <%=  time_ago_in_words(post.created_at) %> <%= t "ago" %>.
-    </div>
-  </div>
-  <div class="col-sm-9">
-    <div class="review-block-title">
-      <%= link_to post.title, post %>
-    </div>
-    <span class="minicontent">
-      <p><%= link_to post.book_name, post %></p>
-      <div class="review-block-description">
-        <%= post.content %>
-       </div>
-        <div class="review-block-picture">
-          <% post.post_images.each do |img| %>
+<li id="post-<%= post.id %>">
+  <!-- Activity Item Start -->
+  <div class="activity--item",>
+      <div class="activity--avatar">
+          <a href="member-activity-personal.html">
+              <%= link_to gravatar_for(post.user) %>
+          </a>
+      </div>
+
+      <div class="activity--info fs--14">
+          <div class="activity--header">
+              <p><a href="member-activity-personal.html"><%= post.user.name %></a> posted at:</p>
+          </div>
+
+          <div class="activity--meta fs--12">
+              <p><%= post.created_at.to_s %></p>
+          </div>
+
+          <div class="activity--content">
+              <div class="info">
+                <div class="name">
+                    <h2 class="h6 fs--12"><%= link_to post.title, post %></h2>
+                    <a  data-overlay="0" data-overlay-color="white">
+                      <% post.post_images.each do |img| %>
                         <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
                       <% end %>
-        </div>
-      </span>
+                    </a>
+                    <h3 class="h6 fs--12"><%= link_to post.book_name, post %></h3>
+                </div>
+
+                <blockquote class="fs--12 text-darkest">
+                    <p>
+                      <% post.content.to_s.split(' ').each do |word| %>
+                        <% if word.start_with?('#') %>
+                          <%= link_to word, search_path(q: word) %>
+                        <%else %>
+                          <%= word %>
+                        <%end %>
+                      <% end %>
+                    </p>
+                </blockquote>
+              </div>
+          </div>
+      </div>
   </div>
-</div>
+  <!-- Activity Item End -->
+</li>

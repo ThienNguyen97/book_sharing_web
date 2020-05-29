@@ -13,9 +13,11 @@
 
                 <!-- Header Navbar Logo Start -->
                 <div class="header--navbar-logo navbar-brand">
+                  <a class ="normal">
                     <%= link_to root_path do %>
-                      <%= t "home.title" %>
+                      <%= image_tag("logo1.jpg",style: "height: 80px; width:138px") %>
                     <% end %>
+                  </a>
                 </div>
                 <!-- Header Navbar Logo End -->
             </div>
@@ -23,7 +25,7 @@
             <!-- Header Search Start -->
             <div class="header--search style--2 float--right" data-form="validate">
                 <%= form_tag search_path, method: :get do %>
-                  <%= text_field_tag :q, params[:q], class:"form-control",
+                  <%= text_field_tag :q, params[:q], class:"form-control", name:"search",
                       placeholder:"Looking for book name..." %>
                   <%= button_tag class: "btn-link" do  %>
                     <i class="fa fa-search"></i>

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # get "/auth/:provider/callback", :to => "sessions#create"
   # get "/auth/failure", :to => "sessions#failure"
   get "/search", :to => "posts#search"
+  get "users/:id/profile", :to =>"users#show_profile", as: "profile"
+  get "users/:id/following", :to =>"users#show_following", as: "following"
+  get "users/:id/followers", :to =>"users#show_followers", as: "followers"
   notify_to :users
   resources :users do
     member do

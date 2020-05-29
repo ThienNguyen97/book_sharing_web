@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_072640) do
+ActiveRecord::Schema.define(version: 2020_05_29_141316) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 2020_05_21_072640) do
     t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "hash_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,6 +83,15 @@ ActiveRecord::Schema.define(version: 2020_05_21_072640) do
     t.index ["notifiable_type", "notifiable_id"], name: "index_notifications_on_notifiable_type_and_notifiable_id"
     t.index ["notifier_type", "notifier_id"], name: "index_notifications_on_notifier_type_and_notifier_id"
     t.index ["target_type", "target_id"], name: "index_notifications_on_target_type_and_target_id"
+  end
+
+  create_table "post_hash_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "hash_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hash_tag_id"], name: "index_post_hash_tags_on_hash_tag_id"
+    t.index ["post_id"], name: "index_post_hash_tags_on_post_id"
   end
 
   create_table "post_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -148,6 +163,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_072640) do
     t.string "name"
     t.string "uid"
     t.string "provider"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

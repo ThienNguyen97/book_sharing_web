@@ -13,7 +13,9 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:q]) if params[:q]
   end
 
-  def show; end
+  def show
+    @posts = Post.all.order_desc.page(params[:page]).per Settings.page_number
+  end
 
   def new
     @post = Post.new

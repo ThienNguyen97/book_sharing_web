@@ -39,7 +39,15 @@
             <div class="review row post-content">
               <div class="reviewText stacked col-sm-12">
                 <p class="readable">
-                  <span><%= post.content %></span>
+                  <span>
+                    <% post.content.to_s.split(' ').each do |word| %>
+                      <% if word.start_with?('#') %>
+                        <%= link_to word, search_path(q: word) %>
+                      <%else %>
+                        <%= word %>
+                      <%end %>
+                    <% end %>
+                  </span>
                 </p>
 
                 <% if user_signed_in? && (current_user.id == @post.user.id) %>
