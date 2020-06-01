@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :user_id, :title, :content, :book_name, post_images_attributes: [:id, :post_id, :image].freeze
+    params.require(:post).permit :user_id, :title, :content,:status, :book_name, post_images_attributes: [:id, :post_id, :image].freeze
   end
 
   def load_post

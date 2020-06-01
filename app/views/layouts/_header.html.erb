@@ -23,10 +23,11 @@
             </div>
 
             <!-- Header Search Start -->
-            <div class="header--search style--2 float--right" data-form="validate">
-                <%= form_tag search_path, method: :get do %>
-                  <%= text_field_tag :q, params[:q], class:"form-control", name:"search",
-                      placeholder:"Looking for book name..." %>
+            <div class="header--search style--2 float--right">
+
+              <%= form_tag search_path, method: :get do %>
+                    <%= text_field_tag :q, params[:q], class:"form-control",
+                      placeholder:"Looking for..." %>
                   <%= button_tag class: "btn-link" do  %>
                     <i class="fa fa-search"></i>
                   <% end %>

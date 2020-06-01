@@ -1,24 +1,17 @@
-<h1><%= t("posts") %></h1>
-<div style="margin-left: 300px">
-<table>
-  <thead>
-    <tr>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<section class="section bg-lighter pt--70 pb--70">
+  <h1><%= t("posts") %></h1>
+  <div style="margin-left: 100px">
+    <ul class="activity--items nav">
+      <% if @posts.nil? %>
+        <h1> Not Found</h1>
+      <% else %>
+        <% @posts.each do |post| %>
+          <% if post.status == 1 %>
+            <%= render @posts %>
+          <% end %>
+        <% end %>
 
-  <tbody>
-    <% if @posts.nil? %>
-      <h1><% Not Found %></h1>
-    <% else %>
-      <% @posts.each do |post| %>
-        <tr>
-          <td><%= link_to post.title, post %></td>
-          <td><%= link_to post.book_name, post %></td>
-        </tr>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
-<br>
-</div>
+    </ul>
+  </div>
+</section>

@@ -20,20 +20,20 @@
   </div>
 
   <div class="form-group pmd-textfield">
-    <%= form.label :book_name, class: "control-label" %> <span style="color: red;">*</span><br>
+    <%= form.label :name_of_document, class: "control-label" %> <span style="color: red;">*</span><br>
     <%= form.text_field :book_name, class: "form-control" %>
   </div>
   <!-- image -->
   <%= form.fields_for :Post_Images do |p| %>
-    <div class="field">
-      <%= p.label :post_images %><br>
-                        <%= p.file_field :post_images, multiple: true, name: "post_images[image][]", accept: "image/jpeg,image/gif,image/png", class: "upload-image" %>
+    <div class="form-group pmd-textfield">
+      <%= p.label :post_images, class: "control-label" %><br>
+      <%= p.file_field :post_images, multiple: true, name: "post_images[image][]", accept: "image/jpeg,image/gif,image/png", class: "upload-image" %>
     </div>
   <% end %>
 
   <div class="form-group pmd-textfield">
     <%= form.label :content, class: "control-label" %><br>
-    <%= form.text_area :content, class: "ckeditor" %>
+    <%= form.text_area :content, class: "ckeditor",placeholder:"Use hashtag ex: #n3, #ITSS..." %>
   </div>
 
   <div class="text-center">

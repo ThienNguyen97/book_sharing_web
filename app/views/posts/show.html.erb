@@ -21,7 +21,12 @@
                         <a class="user"><%= link_to post.user.name, post.user %></a>
                       </div>
                     </div>
-                  <b><p><%= post.title %></p></b>
+                  <b><p><%= post.title %>
+                  <% if @post.status == 1 %>
+                    (Open)
+                  <%else %>
+                    (Closed!)
+                  <%end%></p></b>
                   <b><p><%= post.book_name %></p></b>
                 </div>
             </div>
@@ -54,6 +59,15 @@
                   <%= link_to t("edit"), edit_post_path(@post), class:"btn btn-success" %>
                   <%= link_to t("delete"), post_path(@post), method: :delete,
                     class:"btn btn-danger" %>
+                    <div class= "col-xs-12">
+                      <% if @post.status == 1 %>
+                          <%= form_for @post do |form| %>
+                            <%= form.hidden_field :user_id, value: current_user.id %>
+                            <%= form.hidden_field :status, value: "0".to_i %>
+                            <%= form.submit "Close post", class:"btn btn-primary"%>
+                          <% end %>
+                      <%end %>
+                    </div>
                 <% end %>
 
               </div>

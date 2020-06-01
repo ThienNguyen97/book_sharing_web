@@ -30,7 +30,7 @@ class Post < ApplicationRecord
     if pattern.blank?
       all
     elsif (pattern.start_with?('#'))
-      q  = pattern.gsub('#', '')
+      q = pattern.gsub('#', '')
       @posts = Post.joins(:hash_tags).where(hash_tags: {name: q})
     else
       where("book_name LIKE ?", "%#{pattern}%")

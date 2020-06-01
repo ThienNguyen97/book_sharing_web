@@ -19,26 +19,34 @@
           <div class="activity--content">
               <div class="info">
                 <div class="name">
-                    <h2 class="h6 fs--12"><%= link_to post.title, post %></h2>
+                    <h2 class="h6 fs--12"><%= link_to post.title, post %>
+                      <% if post.status == 1 %>
+                        (Open)
+                      <%else %>
+                        (Closed!)
+                      <%end%>
+                    </h2>
+                    <h2 class="h6 fs--12"><%= link_to post.book_name, post %></h2>
                     <a  data-overlay="0" data-overlay-color="white">
                       <% post.post_images.each do |img| %>
                         <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
                       <% end %>
                     </a>
-                    <h3 class="h6 fs--12"><%= link_to post.book_name, post %></h3>
-                </div>
 
-                <blockquote class="fs--12 text-darkest">
                     <p>
-                      <% post.content.to_s.split(' ').each do |word| %>
-                        <% if word.start_with?('#') %>
-                          <%= link_to word, search_path(q: word) %>
-                        <%else %>
-                          <%= word %>
-                        <%end %>
-                      <% end %>
+                      <blockquote class="fs--12 text-darkest">
+                        <p>
+                          <% post.content.to_s.split(' ').each do |word| %>
+                            <% if word.start_with?('#') %>
+                              <%= link_to word, search_path(q: word) %>
+                            <%else %>
+                              <%= word %>
+                            <%end %>
+                          <% end %>
+                        </p>
+                      </blockquote>
                     </p>
-                </blockquote>
+                </div>
               </div>
           </div>
       </div>
