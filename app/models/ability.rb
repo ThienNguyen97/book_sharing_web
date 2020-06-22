@@ -12,7 +12,6 @@ class Ability
             can :access, :rails_admin
             can :read, :dashboard
             can :manage,[User, Post, Comment]
-            can :read, [Message]
         end
 
     end

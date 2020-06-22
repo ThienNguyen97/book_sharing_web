@@ -3,14 +3,14 @@
   <div style="margin-left: 100px">
     <ul class="activity--items nav">
       <% if @posts.nil? %>
-        <h1> Not Found</h1>
+        <h1> <%= t "notfound" %></h1>
       <% else %>
         <% @posts.each do |post| %>
           <% if post.status == 1 %>
             <%= render @posts %>
           <% end %>
         <% end %>
-
+        <%= paginate @posts, theme: "twitter-bootstrap-3" %>
       <% end %>
     </ul>
   </div>

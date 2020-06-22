@@ -295,33 +295,33 @@ Author URI  : https://themeforest.net/user/themelooks
         /* ------------------------------------------------------------------------- *
          * REVIEW RATING
          * ------------------------------------------------------------------------- */
-        var $reviewRating = $('.review--rating');
+        // var $reviewRating = $('.review--rating');
 
-        $reviewRating .on('click', 'label', function () {
-            var $t = $(this);
+        // $reviewRating .on('click', 'label', function () {
+        //     var $t = $(this);
 
-            $t.parent('.stars').attr( 'data-selected', $t.children('input').val() );
-        });
+        //     $t.parent('.stars').attr( 'data-selected', $t.children('input').val() );
+        // });
 
         /* ------------------------------------------------------------------------- *
          * CART WIDGET
          * ------------------------------------------------------------------------- */
-        var $cartWidget = $('.cart--widget');
+        // var $cartWidget = $('.cart--widget');
 
-        $cartWidget.on('click', '.remove', function (e) {
-            e.preventDefault();
+        // $cartWidget.on('click', '.remove', function (e) {
+        //     e.preventDefault();
 
-            e.$el = $(this);
-            e.$parent = e.$el.parent('li');
+        //     e.$el = $(this);
+        //     e.$parent = e.$el.parent('li');
 
-            e.$el.fadeOut(function () {
-                if ( e.$parent.index() === 0 && e.$parent.next().length === 0 ) {
-                    e.$parent.html('<p>No products in the cart.</p>');
-                } else {
-                    e.$parent.remove();
-                }
-            });
-        });
+        //     e.$el.fadeOut(function () {
+        //         if ( e.$parent.index() === 0 && e.$parent.next().length === 0 ) {
+        //             e.$parent.html('<p>No products in the cart.</p>');
+        //         } else {
+        //             e.$parent.remove();
+        //         }
+        //     });
+        // });
 
         /* ------------------------------------------------------------------------- *
          * HEADER SECTION
@@ -353,31 +353,31 @@ Author URI  : https://themeforest.net/user/themelooks
         /* ------------------------------------------------------------------------- *
          * BANNER SECTION
          * ------------------------------------------------------------------------- */
-        var $bannerSlider = $('.banner--slider'),
-            bannerSliderFull = function (onresize) {
-                $bannerSlider.css('height', function (wn, bs) {
-                    wn = $wn.outerHeight() - $header.outerHeight(); // Window Height without Header
-                    bs = parseInt( bs, 10 ); // Banner Slider Height
+        // var $bannerSlider = $('.banner--slider'),
+        //     bannerSliderFull = function (onresize) {
+        //         $bannerSlider.css('height', function (wn, bs) {
+        //             wn = $wn.outerHeight() - $header.outerHeight(); // Window Height without Header
+        //             bs = parseInt( bs, 10 ); // Banner Slider Height
 
-                    return wn > bs ? wn : bs;
-                });
+        //             return wn > bs ? wn : bs;
+        //         });
 
-                if (!onresize) $bannerSlider.owlCarousel('refresh');
-            };
+        //         if (!onresize) $bannerSlider.owlCarousel('refresh');
+        //     };
 
-        bannerSliderFull(0);
-        $wn.on('resize', bannerSliderFull);
+        // bannerSliderFull(0);
+        // $wn.on('resize', bannerSliderFull);
 
         /* ------------------------------------------------------------------------- *
          * COMING SOON SECTION
          * ------------------------------------------------------------------------- */
-        var $cs = $('.coming-soon--section');
+        // var $cs = $('.coming-soon--section');
 
-        if ( $cs.length ) {
-            $cs.css('min-height', function () {
-                return $cs.find('.cs--content').outerHeight();
-            });
-        }
+        // if ( $cs.length ) {
+        //     $cs.css('min-height', function () {
+        //         return $cs.find('.cs--content').outerHeight();
+        //     });
+        // }
 
         /* ------------------------------------------------------------------------- *
          * 404 SECTION
@@ -473,30 +473,30 @@ Author URI  : https://themeforest.net/user/themelooks
         /* ------------------------------------------------------------------------- *
          * PRELOADER
          * ------------------------------------------------------------------------- */
-        var $preloader = $('#preloader');
+        // var $preloader = $('#preloader');
 
-        if ( $preloader.length ) {
-            $preloader.fadeOut('slow');
-        }
+        // if ( $preloader.length ) {
+        //     $preloader.fadeOut('slow');
+        // }
 
         /* ------------------------------------------------------------------------- *
          * SCROLLING ANIMATIONS
          * ------------------------------------------------------------------------- */
-        var $scrollRevealGroup = $('[data-scroll-reveal="group"]'),
-            scrollReveal = '';
+        // var $scrollRevealGroup = $('[data-scroll-reveal="group"]'),
+        //     scrollReveal = '';
 
-        if ( typeof ScrollReveal === "function" ) {
-            scrollReveal = ScrollReveal();
+        // if ( typeof ScrollReveal === "function" ) {
+        //     scrollReveal = ScrollReveal();
 
-            scrollReveal
-                .reveal('[data-scroll-reveal="left"]', {origin: 'left', mobile: false, duration: 800})
-                .reveal('[data-scroll-reveal="right"]', {origin: 'right', mobile: false, duration: 800})
-                .reveal('[data-scroll-reveal="bottom"]', {duration: 800});
+        //     scrollReveal
+        //         .reveal('[data-scroll-reveal="left"]', {origin: 'left', mobile: false, duration: 800})
+        //         .reveal('[data-scroll-reveal="right"]', {origin: 'right', mobile: false, duration: 800})
+        //         .reveal('[data-scroll-reveal="bottom"]', {duration: 800});
 
-            $scrollRevealGroup.each(function () {
-                scrollReveal.reveal($(this).children(), {duration: 800}, 150);
-            });
-        }
+        //     $scrollRevealGroup.each(function () {
+        //         scrollReveal.reveal($(this).children(), {duration: 800}, 150);
+        //     });
+        // }
     });
 
 })(jQuery);

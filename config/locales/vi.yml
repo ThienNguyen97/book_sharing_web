@@ -1,59 +1,157 @@
 vi:
-  hello: "Hello world"
-  ruby_book: "RubyNaitei2019BookSharing"
+  home:
+    title: "Hedspi Web"
+    trangchu: "Trang chủ"
+    contact: "Liên hệ"
+  time_ago: "%{time} ago"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_seconds:
+        one: 1 second
+        other: "%{count} seconds"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 day
+        other: "%{count} days"
+      x_months:
+        one: 1 month
+        other: "%{count} months"
+      x_years:
+        one: 1 year
+        other: "%{count} years"
+    prompts:
+      second: Giây
+      minute: Phút
+      hour: Giờ
+      day: Ngày
+      month: Tháng
+      year: Năm
+  hello: "Xin chào!"
+  ruby_book: "Hedspi Web"
+  failure_fb: "Rất tiếc, bạn không thể truy cập vào hệ thống!"
+  sign_fb: "Đăng nhập với Facebook."
   sign_up: "Đăng ký"
+  fb_error: "There was an error while trying to authenticate you"
+  resend_confir: "Resend confirmation instructions"
+  change_password: "Thay đổi mật khẩu"
+  new_password: "Mật khẩu mới"
+  confirm_password: "Xác nhận mật khẩu mới"
+  forgot_password: "Quên mật khẩu?"
+  send_reset_password: "Send me reset password instructions"
+  resend_unlock: "Resend unlock instructions"
+  cancel_account: "Xóa tài khoản."
+  update: "Chỉnh sửa lại thông tin của bạn"
   users:
     new:
-      sign_up: "Đăng ký"
-      create_my_account: "Tạo tài khoản"
+      sign_up: "Đăng nhập"
+      create_my_account: "Tạo tài khoản mới"
       name: "Tên"
       password: "Mật khẩu"
-      pass_confirm: "Xác nhận"
-      edit_user: "Sửa đổi thông tin"
-  error: "lỗi"
-  create_my_account: "Tạo tài khoản"
-  activate_account: "Tài khoản được kích hoạt"
-  welcome: "Xin chào"
-  rails: "Rails app"
+      pass_confirm: "Xác nhận mật khẩu"
+    edit:
+      edit: "Chỉnh sửa thông tin"
+      update: "Thay đổi thông tin"
+      save: "Lưu lại thay đổi"
+      change: "thay đổi"
+    update:
+      updated: "Thông tin của bạn đã được cập nhật"
+    logged_in_user:
+      please_login: "Vui lòng đăng nhập!"
+    index:
+      users: "Danh sách người dùng"
+    destroy:
+      deleted: "Đã xóa"
+      danger: "You cant do it."
+      notice: "Not deleted"
+    load_user:
+      user_not_found: "Người dùng không tìm thấy"
+    sign_out: "Đăng xuất"
+    sign_up: "Đăng ký"
+    login: "Đăng nhập"
+  error: "Lỗi"
+  create_my_account: "Tạo tài khoản mới"
+  activate_account: "Activate account"
+  welcome: "Chào mừng"
+  rails: "Hedspi Web"
   log_in: "Đăng nhập"
-  sign_up_now: "Đăng kí ngay"
-  invalid_combi: "Mật khẩu và tài khoản không chính xác"
-  book_share: "Book Share"
-  book_not_found: "Không tìm thấy sách!"
-  published: "Xuất bản "
-  by: "bởi "
-  genres: "Thể loại"
-  post_not_found: "Không tìm thấy bài viết!"
-  like_not_found: "Bạn chưa like bài viết!"
-  comment_not_found: "Không tồn tại bình luận!"
+  sign_up_now: "Đăng ký ngay!"
+  invalid_combi: "Kiểm tra lại tên hoặc mật khẩu"
+  book_share: "Hedspi Web"
+  published: "Published "
+  by: "by "
+  like_not_found: "Không tìm thấy lượt thích!"
+  comment_not_found: "Không tìm thấy lượt bình luận!"
   liked: "Đã thích"
   like_it: "Thích"
-  like(s): "lượt thích"
-  like: "thích"
-  first_like: "Hãy là người đầu tiên thích bài viết."
+  like(s): "thích(s)"
+  like: "Thích"
+  first_like: "Hãy thích bài đăng nào!"
   success: "Thành công"
-  fail: "Không thành công"
-  update_success: "Update thành công"
-  update_fail: "Update không thành công"
-  destroy_success: "Xóa thành công"
-  destroy_fail: "Xóa không thành công"
-  edit: "Sửa"
+  fail: "Fail"
+  update_success: "Thay đổi thành công"
+  update_fail: "Thay đổi thất bại"
+  destroy_success: "Destroy successfully"
+  destroy_fail: "Destroy fail"
+  edit: "Chỉnh sửa"
   delete: "Xóa"
   confirm: "Xác nhận"
-  first_comment: "Trở thành người đầu tiên bình luận."
+  first_comment: "Hãy bình luận về bài đăng nào!"
   content: "Nội dung"
-  submit: "Gửi"
-  login: "Hãy đăng nhập trước"
-  write_post: "Viết bài"
-  form_title: "Đánh giá về sách"
-  book_name: "Tên sách"
-  choose_book: "Lựa chọn sách"
-  posts: "Bài viết"
-  new_post: "Viết bài"
-  post_success: "Tạo bài viết thành công"
-  update_success: "Chỉnh sửa thành công"
-  destroy_success: "Xóa thành công"
-  post_error: "làm cho bài viết không được lưu"
+  submit: "Submit"
+  login: "Vui lòng đăng nhập!"
+  checkfollow: "Vui lòng theo dõi người dùng để tiếp tục thao tác!"
+  write_post: "Tạo tài liệu mới"
+  form_title: "Tạo tài liệu mới"
+  post_success: "Tài liệu mới đã được tạo thành công"
+  update_success: "Thông tin đã được thay đổi thành công"
+  destroy_success: "Bài đăng đã bị xóa."
+  post_error: "prohibited this post from being saved:"
   back: "Back"
-  edit: "Sửa"
+  edit: "Edit"
   destroy: "Xóa"
+  posted: "posted"
+  ago: "ago"
+  following: "Đang theo dõi"
+  follow: "Theo dõi"
+  unfollow: "Bỏ theo dõi"
+  followers: "Người đang theo dõi bạn"
+  user_not_found: "user not found"
+  posts: "Kết quả tìm kiếm"
+  not_confirmation: "Didn't receive confirmation instructions?"
+  not_unlock: "Didn't receive unlock instructions?"
+  yourfollowing'sreviews: "Tài liệu bởi những người đang theo dõi"
+  LatestPostGroups: "Các tài liệu mới nhất"
+  HotPostsGroups: "Các tài liệu nổi bật"
+  contract: "Liên hệ"
+  profile: "Thông tin"
+  AboutMe: "Thông tin về tôi"
+  name: "Tên"
+  email: "Email"
+  language: "Ngôn ngữ"
+  view_profile: "Hiển thị trang cá nhân"
+  notfound: "Không tìm thấy dữ liệu"
+  home: "Trang cá nhân"

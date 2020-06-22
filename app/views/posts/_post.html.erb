@@ -26,7 +26,8 @@
                         (Closed!)
                       <%end%>
                     </h2>
-                    <h2 class="h6 fs--12"><%= link_to post.book_name, post %></h2>
+                    <h2 class="h6 fs--12"><%= link_to post.book_name, post %><br>
+                    <p> Subject: <%= post.subject %> - Semester: <%= post.semester %></p></h2>
                     <a  data-overlay="0" data-overlay-color="white">
                       <% post.post_images.each do |img| %>
                         <%= image_tag(img.link.url,  class: "img-responsive post-image", style: "height: 100px; width:100px")  %>
@@ -47,6 +48,20 @@
                       </blockquote>
                     </p>
                 </div>
+
+                <div class="wrapIcon like">
+                  <span class="far fa-thumbs-up"></span>&nbsp;
+                  <p class="amount like ng-binding">
+                    <%= link_to post.likes.count, post %>
+                  </p>
+                </div>&nbsp;&nbsp;|
+                <div class="wrapIcon comment">
+                    <span class="fa fa-comments"></span>&nbsp;
+                    <p class="amount comment ng-binding">
+                      <%= link_to post.comments.count, post %>
+                    </p>
+                </div>
+
               </div>
           </div>
       </div>

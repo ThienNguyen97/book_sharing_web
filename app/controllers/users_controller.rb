@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: %i(new create)
   before_action :load_user, except: %i(new create index)
   before_action :correct_user, only: %i(edit update)
+  before_action :followed_user, only: %i(show_profile show_following show_followers)
 
   def index
     @users = User.page(params[:page]).per Settings.paginate_user

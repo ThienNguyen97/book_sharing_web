@@ -9,7 +9,7 @@
       <div class="container">
           <!-- Box Nav Start -->
           <div class="box--nav clearfix">
-              <h2 class="h2 fw--600 float--left">Your following's reviews</h2>
+              <h2 class="h2 fw--600 float--left"><%= t "yourfollowing'sreviews" %></h2>
           </div>
           <!-- Box Nav End -->
 
@@ -20,7 +20,7 @@
                   <!-- Box Items Start -->
                   <div class="box--items owl-carousel" data-owl-items="4" data-owl-margin="30" data-owl-autoplay="false" data-owl-responsive='{"0": {"items": "1"}, "481": {"items": "2"}, "768": {"items": "3"}, "992": {"items": "4"}}'>
                       <!-- Post Picture -->
-                    <%= render partial: "post", object: @feed_items, as: "posts"%>
+                    <%= render partial: "feed_item", object: @feed_items, as: "feed_items"%>
                       <!-- Box Item End -->
                   </div>
                   <!-- Box Items End -->
@@ -50,7 +50,7 @@
       <div class="container">
           <!-- Box Nav Start -->
           <div class="box--nav clearfix">
-              <h2 class="h2 fw--600 float--left">Latest Post Groups</h2>
+              <h2 class="h2 fw--600 float--left"><%= t "LatestPostGroups" %></h2>
           </div>
           <!-- Box Nav End -->
 
@@ -91,7 +91,7 @@
     <div class="container">
         <!-- Box Nav Start -->
         <div class="box--nav clearfix">
-            <h2 class="h2 fw--600 float--left">Latest Post Groups</h2>
+            <h2 class="h2 fw--600 float--left"><%= t "LatestPostGroups" %></h2>
         </div>
         <!-- Box Nav End -->
 
@@ -129,51 +129,42 @@
   </section>
 <% end %>
 
-<!-- <section class="section pt--70 pb--20">
-  <div class="container">
-    <div class="col-md-12 pb--20">
-      <div class="section--title pb--20">
-          <div class="title">
-              <h2 class="h2 fw--600 float--left">Top Users</h2>
-          </div>
-      </div>
-          <% @top_users.each do |user| %>
-            <div class="member--item">
-              <div class="vc--parent">
-                  <div class="vc--child">
-                      <div class="img img-circle">
-                          <a class="btn-link">
-                              <%= link_to gravatar_for(user, size: 60),user %>
-                          </a>
-                      </div>
+<section class="section bg-lighter pt--70 pb--70">
+    <div class="container">
+        <!-- Box Nav Start -->
+        <div class="box--nav clearfix">
+            <h2 class="h2 fw--600 float--left"><%= t "HotPostsGroups" %></h2>
+        </div>
+        <!-- Box Nav End -->
 
-                      <div class="name">
-                          <h3 class="h6 fs--12">
-                              <a class="btn-link">
-                                <%= link_to user_path(user) do %>
-                                  <%= user.name %>
-                                <% end %>
-                              </a>
-                          </h3>
-                      </div>
-                      <div class="actions">
-                          <ul class="nav">
-                              <li>
-                                  <a title="Posted" class="btn-link" data-toggle="tooltip" data-placement="bottom">
-                                      <i class="fa fa-envelope-o"><%= user.posts.count %></i>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a title="Liked" class="btn-link" data-toggle="tooltip" data-placement="bottom">
-                                      <i class="fas fa-thumbs-up"><%= user.count_getted_like %></i>
-                                  </a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
+        <!-- Tab Content Start -->
+        <div class="tab-content">
+            <!-- Tab Pane Start -->
+            <div class="tab-pane fade in active" id="boxItemsTab01">
+                <!-- Box Items Start -->
+                <div class="box--items owl-carousel" data-owl-items="4" data-owl-margin="30" data-owl-autoplay="false" data-owl-responsive='{"0": {"items": "1"}, "481": {"items": "2"}, "768": {"items": "3"}, "992": {"items": "4"}}'>
+                    <!-- Post Picture -->
+                  <%= render partial: "top_post", object: @top_posts, as: "top_posts"%>
+                    <!-- Box Item End -->
+                </div>
+                <!-- Box Items End -->
+
+              <!-- Box Controls Start -->
+              <!--  -->
+              <div class="box--controls text-center">
+                  <a href="#" class="btn fs--16 btn-default" data-action="prev">
+                      <i class="fa fa-caret-left"></i>
+                  </a>
+
+                  <a href="#" class="btn fs--16 btn-default" data-action="next">
+                      <i class="fa fa-caret-right"></i>
+                  </a>
+                </div>
+              <!-- Box Controls End -->
             </div>
-          <% end %>
+            <!-- Tab Pane End -->
+        </div>
+        <!-- Tab Content End -->
     </div>
-  </div>
-</section> -->
+  </section>
+

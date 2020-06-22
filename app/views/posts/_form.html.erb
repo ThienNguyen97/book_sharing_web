@@ -23,6 +23,14 @@
     <%= form.label :name_of_document, class: "control-label" %> <span style="color: red;">*</span><br>
     <%= form.text_field :book_name, class: "form-control" %>
   </div>
+  <div class="form-group pmd-textfield">
+    <%= form.label :subject, class: "control-label" %><br>
+    <%= form.text_field :subject, class: "form-control" %>
+  </div>
+  <div class="form-group pmd-textfield">
+    <%= form.label :semester, class: "control-label" %><br>
+    <%= form.text_field :semester, class: "form-control" %>
+  </div>
   <!-- image -->
   <%= form.fields_for :Post_Images do |p| %>
     <div class="form-group pmd-textfield">

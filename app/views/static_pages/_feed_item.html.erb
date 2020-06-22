@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @feed_items.each do |post| %>
   <% if post.status == 1 %>
     <div class="box--item text-center">
       <a class="img" data-overlay="0.1">
@@ -29,7 +29,7 @@
 
           <div class="meta">
               <p><%= post.created_at.to_s %></p>
-              <p><%= post.book_name %></p>
+              <p></i><%= post.book_name %></p>
           </div>
 
           <div class="desc text-darker">
@@ -37,6 +37,7 @@
                 <%= truncate_html(post.content, length: 80, omission: ' ...') %>
               </p>
           </div>
+
           <div class="wrapIcon like">
             <span class="far fa-thumbs-up"></span>&nbsp;
             <p class="amount like ng-binding">

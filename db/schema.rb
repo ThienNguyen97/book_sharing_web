@@ -12,18 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_05_29_141316) do
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "page_number"
-    t.text "descript"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "isbn"
-    t.datetime "publish_date"
-    t.string "publisher"
-    t.string "picture"
-  end
-
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -110,15 +98,9 @@ ActiveRecord::Schema.define(version: 2020_05_29_141316) do
     t.integer "user_id"
     t.string "book_name"
     t.string "title"
+    t.string "subject"
+    t.string "semester"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
-  end
-
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.float "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "book_id"
   end
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
