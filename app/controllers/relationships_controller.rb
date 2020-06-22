@@ -6,6 +6,8 @@ class RelationshipsController < ApplicationController
       format.html{redirect_to @user}
       format.js
     end
+    relationship = current_user.active_relationships.find_by(followed_id: @user.id)
+    # Notifications::RelationshipReplyService.new(relationship).perform
   end
 
   def destroy

@@ -23,6 +23,7 @@
 //= require rails-ujs
 //= require notification
 //= require main
+//= require messager
 //= require bootstrap.min
 //= require isotope.min
 //= require jquery-3.2.1.min

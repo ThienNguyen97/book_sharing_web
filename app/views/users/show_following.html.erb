@@ -10,7 +10,7 @@
           </div>
 
           <div class="cover--user-desc fw--400 fs--18 fstyle--i text-darkest">
-            <p>Contract:<%= @user.email %></p>
+            <p><%= t "contract" %>: <%= @user.email %></p>
             <p>Have a nice day!</p>
           </div>
           <div class="cover--user-name">
@@ -48,7 +48,7 @@
                 </li>
                 <li>
                   <a>
-                  <%= link_to t("follower"), followers_path %>
+                  <%= link_to t("followers"), followers_path %>
                   <%= @user.followers.count %>
                   </a>
                 </li>

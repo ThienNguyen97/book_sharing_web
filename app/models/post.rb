@@ -1,7 +1,6 @@
 class Post < ApplicationRecord
   scope :order_desc, ->{order created_at: :desc}
   belongs_to :user
-  #belongs_to :book
   has_many :post_images, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -21,8 +20,8 @@ class Post < ApplicationRecord
   after_commit :create_hash_tags, on: :create
 
   def count_like
-    post = Post.find_by id: id
-    likes = post.likes
+    # post = Post.find_by id: id
+    # likes = post.likes
     likes.size
   end
 
@@ -31,7 +30,7 @@ class Post < ApplicationRecord
       all
     elsif (pattern.start_with?('#'))
       q = pattern.gsub('#', '')
-      @posts = Post.joins(:hash_tags).where(hash_tags: {name: q})
+      @posts = Post.eager_load(:hash_tags).where(hash_tags: {name: q})
     else
       where("book_name LIKE ?", "%#{pattern}%")
     end

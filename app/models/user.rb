@@ -6,7 +6,7 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :rates
+  has_many :commented_users, through: :comments, source: :user
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :messages
 
   mount_uploader :avatar, AvatarUploader
+
+  scope :create_desc, ->{order(created_at: :desc)}
 
   attr_accessor :activation_token
   before_save :downcase_email

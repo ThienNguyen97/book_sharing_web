@@ -28,4 +28,15 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "login"
     redirect_to new_user_session_url
   end
+
+  def followed_user
+    unless current_user? @user
+      if current_user.following? @user
+       else
+        store_location
+        flash[:danger] = t "checkfollow"
+        redirect_to user_url
+       end
+    end
+  end
 end

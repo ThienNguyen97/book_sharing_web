@@ -10,7 +10,7 @@
           </div>
 
           <div class="cover--user-desc fw--400 fs--18 fstyle--i text-darkest">
-            <p>Contract:<%= @user.email %></p>
+            <p><%= t "contract" %>: <%= @user.email %></p>
             <p>Have a nice day!</p>
           </div>
           <div class="cover--user-name">
@@ -48,7 +48,7 @@
                 </li>
                 <li>
                   <a>
-                  <%= link_to t("follower"), followers_path %>
+                  <%= link_to t("followers"), followers_path %>
                   <%= @user.followers.count %>
                   </a>
                 </li>
@@ -62,7 +62,7 @@
                 <div class="profile--item">
                     <div class="profile--heading">
                         <h3 class="h4 fw--700">
-                            <span class="mr--4">About Me</span>
+                            <span class="mr--4"><%= t "AboutMe" %></span>
                             <i class="ml--10 text-primary fa fa-caret-right"></i>
                         </h3>
                     </div>
@@ -70,11 +70,11 @@
                     <div class="profile--info">
                         <table class="table">
                             <tr>
-                                <th class="fw--700 text-darkest">Name</th>
+                                <th class="fw--700 text-darkest"><%= t "name" %></th>
                                 <td><a class="btn-link"><%= @user.name %></a></td>
                             </tr>
                             <tr>
-                                <th class="fw--700 text-darkest">Email</th>
+                                <th class="fw--700 text-darkest"><%= t "email" %></th>
                                 <td><%= @user.email %></td>
                             </tr>
                         </table>
@@ -86,7 +86,7 @@
                 <div class="profile--item">
                     <div class="profile--heading">
                         <h3 class="h4 fw--700">
-                            <span class="mr--4">Contact</span>
+                            <span class="mr--4"><%= t "contract" %></span>
                             <i class="ml--10 text-primary fa fa-caret-right"></i>
                         </h3>
                     </div>
@@ -94,11 +94,11 @@
                     <div class="profile--info">
                         <table class="table">
                             <tr>
-                                <th class="fw--700 text-darkest">Name</th>
+                                <th class="fw--700 text-darkest"><%= t "name" %></th>
                                 <td><a> <%= @user.name %></a></td>
                             </tr>
                             <tr>
-                                <th class="fw--700 text-darkest">E-mail</th>
+                                <th class="fw--700 text-darkest"><%= t "email" %></th>
                                 <td><a><%= @user.email %></a></td>
                             </tr>
                         </table>

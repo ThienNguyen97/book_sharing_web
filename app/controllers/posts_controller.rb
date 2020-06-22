@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, except: %i(index show)
+  before_action :logged_in_user, except: %i(index show search)
   before_action :load_post, only: %i(show edit update destroy)
   before_action :correct_user, only: :destroy
   before_action :load_support
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:q]) if params[:q]
+    @posts = Post.search(params[:q]).order_desc.page(params[:page]).per Settings.paginate_post if params[:q]
   end
 
   def show
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :user_id, :title, :content,:status, :book_name, post_images_attributes: [:id, :post_id, :image].freeze
+    params.require(:post).permit :user_id, :title, :content,:status, :subject, :semester, :book_name, post_images_attributes: [:id, :post_id, :image].freeze
   end
 
   def load_post

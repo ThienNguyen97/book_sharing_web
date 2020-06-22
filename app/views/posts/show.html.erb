@@ -21,14 +21,15 @@
                         <a class="user"><%= link_to post.user.name, post.user %></a>
                       </div>
                     </div>
-                  <b><p><%= post.title %>
-                  <% if @post.status == 1 %>
-                    (Open)
-                  <%else %>
-                    (Closed!)
-                  <%end%></p></b>
-                  <b><p><%= post.book_name %></p></b>
-                </div>
+                    <b><p><%= post.title %>
+                    <% if @post.status == 1 %>
+                      (Open)
+                    <%else %>
+                      (Closed!)
+                    <%end%></p></b>
+                    <b><p><%= post.book_name %> - Subject: <%= post.subject %> - Semester: <%= post.semester %></p></b>
+                    <!-- <b><p></p></b> -->
+                  </div>
             </div>
 
             <div id="imagecol" class="col-sm-12">
