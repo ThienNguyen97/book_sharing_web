@@ -28,7 +28,7 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem 'figaro'
-gem "puma", "~> 3.11"
+gem "puma", "~> 3.12"
 gem "owlcarousel-rails", "~> 2.2", ">= 2.2.3.5"
 
 gem "rails-i18n"
