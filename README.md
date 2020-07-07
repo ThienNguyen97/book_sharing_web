@@ -1,8 +1,8 @@
-HƯỚNG DẪN CÀI ĐẶT 
-    1. Cài đặt môi trường
-Ứng dụng được cài đặt và chạy trên môi trường Ubuntu bản 18.04
-    • Cài đặt Ruby:
-Cài đặt Ruby phiên bản 2.5.5 từ https://www.ruby-lang.org/vi/downloads/
+#HƯỚNG DẪN CÀI ĐẶT 
+#    1. Cài đặt môi trường
+#Ứng dụng được cài đặt và chạy trên môi trường Ubuntu bản 18.04
+#    • Cài đặt Ruby:
+#Cài đặt Ruby phiên bản 2.5.5 từ https://www.ruby-lang.org/vi/downloads/
 Hoặc tiến hành cài đặt trên ubuntu sử dụng teminal như sau: 
     • Sudo apt update
     • Sudo apt install ruby 2.5.5 -full
